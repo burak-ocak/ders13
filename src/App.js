@@ -1,8 +1,21 @@
-
+import { useRef } from "react";
 
 function App() {
+
+  const renkInput = useRef()
+
+  function renkDegistir(){
+    const  renk = renkInput.current.value
+    
+    document.body.style.backgroundColor = renk;
+  }
+
   return (
-    <h2>App</h2>
+    <div>
+
+      <input ref={renkInput} type="text"/>
+      <button onClick={renkDegistir}>renkDegistir</button>
+    </div>
   );
 }
 
