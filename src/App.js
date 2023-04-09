@@ -1,9 +1,23 @@
+import { useRef, useState } from "react";
 
 
 function App() {
+
+  const [sayi, sayiGuncelle]   = useState(0);
+
+  const ref1 = useRef(1)
+
+  if (sayi > 5){
+    ref1.current = 5;
+  }
+    console.log(ref1)
+
   return (
-    <h2>App</h2>
+    <div>
+      {sayi}
+      <button onClick={ ()=>{ sayiGuncelle( onceki => onceki + 1) } }>Arttır</button>
+    </div>
   );
-}
+};
 
 export default App;
